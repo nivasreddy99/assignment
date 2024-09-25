@@ -5,7 +5,7 @@ from .heap_median import MedianFinder
 from .static_median import static_median
 
 def compare_algorithms():
-    test_sizes = [10**i for i in range(2, 7)]  # 10^2 to 10^6
+    test_sizes = [10**i for i in range(0, 5)]  # 10^2 to 10^6
     
     print("Comparing Streaming Median algorithms:")
     print("Size\tHeap Time\tStatic Time")
@@ -23,7 +23,9 @@ def compare_algorithms():
         
         # Static algorithm
         start_time = time.time()
-        static_median_result = static_median(numbers)
+        for num in range(len(numbers)): 
+            static_median_result = static_median(numbers[:num+1])  # Update static median in-place
+            
         static_time = time.time() - start_time
         
         print(f"{size}\t{heap_time:.6f}\t{static_time:.6f}")

@@ -5,13 +5,10 @@ from streaming_median import comparison as sm_comparison
 def main():
     print("1. Water Jug Problem")
     wj_comparison.run_comparison()
-
   
     print("\n2. Median of Streaming Numbers")
     sm_comparison.compare_algorithms()
 
-    print("\n3. Summary")
-  
 
 if __name__ == "__main__":
     main()
